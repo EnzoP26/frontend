@@ -9,7 +9,5 @@ import { CounterService } from './counter.service';
 export class AppComponent {
   constructor(private counterService: CounterService) {}
 
-  reset() {
-    this.counterService.reset()
-  }
+  
 }
