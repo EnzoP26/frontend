@@ -23,7 +23,7 @@ export class CounterService {
 
   increment(): Observable<Counter>{
     this.httpClient.patch("https://lp4asgadot.herokuapp.com/counters/47.json",{"value" : 1}).subscribe();
-    return this.httpClient.get<Counter>("https://lp4asgadot.herokuapp.com/counters/47.json");
+    return this.httpClient.get<Counter>("https://lp4asgadot.herokuapp.com/counters/53.json");
   }
 
   getCounterValue(id: number): Observable<Counter> {
