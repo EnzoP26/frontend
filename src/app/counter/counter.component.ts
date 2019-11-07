@@ -24,7 +24,7 @@ export class CounterComponent implements OnInit {
 
   increment(){
     //this.counterService.increment(this.position);
-    if(this.position === 53){
+    if(this.position+41 === 43 ){
       this.counterService.increment(/*this.position*/).subscribe(counter => this.value = counter);
     }
   }
