@@ -20,6 +20,8 @@
   margin : 1em;
 }
 
-header {
+body {
   z-index: 1;
+  text-align : right;
+  color : blue;
 }
