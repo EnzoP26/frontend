@@ -4,7 +4,7 @@
 
 h1 {
     animation-name: mvtRecti; 
-    animation-duration: 600s; 
+    animation-duration: 3000s; 
     animation-iteration-count: infinite;
     animation-direction: alternate;
     position : relative;
