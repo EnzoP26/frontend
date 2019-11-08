@@ -3,7 +3,7 @@
 }
 
 .sidenav {
-  width: 200px;
+  width: 200px;position : absolute;
 }
 
 .sidenav .mat-toolbar {
@@ -20,8 +20,3 @@
   margin : 1em;
 }
 
-body {
-  z-index: 1;
-  text-align : right;
-  color : blue;
-}
