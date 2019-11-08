@@ -18,13 +18,21 @@ export class CounterComponent implements OnInit {
   constructor(public counterService : CounterService) { }
 
   ngOnInit() {
-    console.log("call counter")
-    this.counterService.getCounterValue(this.position)
-          .subscribe(counter => this.value =  counter)
+    if (this.position == 1){
+      this.counterService.getCounterValue(47).subscribe(counter => this.value =  counter)
+    }
+    if (this.position == 2){
+      this.counterService.getCounterValue(48).subscribe(counter => this.value =  counter)
+    }
+    if (this.position == 3){
+      this.counterService.getCounterValue(51).subscribe(counter => this.value =  counter)
+    }
   }
 
 
   increment(){
-    this.counterService.increment().subscribe(counter => this.value = counter);
+    if(this.position == 1) this.counterService.increment(47).subscribe(counter => this.value = counter);
+    if(this.position == 2) this.counterService.increment(48).subscribe(counter => this.value = counter);
+    if(this.position == 3) this.counterService.increment(51).subscribe(counter => this.value = counter);
   }
 }

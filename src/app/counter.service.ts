@@ -21,13 +21,12 @@ export class CounterService {
   }*/
 
 
-  increment(): Observable<Counter>{
-    this.httpClient.patch("https://lp4asgadot.herokuapp.com/counters/22.json",{"value" : 1}).subscribe();
-    return this.httpClient.get<Counter>("https://lp4asgadot.herokuapp.com/counters/22.json");
+  increment(id : number): Observable<Counter>{
+    return this.httpClient.patch<Counter>("https://lp4asgadot.herokuapp.com/counters/"+id+".json", {});
   }
 
   getCounterValue(id: number): Observable<Counter> {
-    return this.httpClient.get<Counter>("https://lp4asgadot.herokuapp.com/counters/22.json")
+    return this.httpClient.get<Counter>("https://lp4asgadot.herokuapp.com/counters/"+id+".json")
   }
 
 
