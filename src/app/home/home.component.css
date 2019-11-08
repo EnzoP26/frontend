@@ -1,3 +1,16 @@
 .counter {
     margin-bottom : 1em;
 }
+
+h1 {
+    animation-name: mvtRecti; 
+    animation-duration: 600s; 
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    position : relative;
+}
+
+@keyframes mvtRecti {
+    0%   { left : 0px;   top : 0px;}
+    100% { left : 800px; top : 0px;}
+}
