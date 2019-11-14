@@ -3,6 +3,7 @@ import { CounterService } from '../counter.service';
 import { Counter } from '../counter';
 
 import { ActivatedRoute } from '@angular/router';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-counter',
@@ -10,20 +11,17 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./counter.component.css']
 })
 export class CounterComponent implements OnInit {
-  
-  @Input() id : number;
-  name: string;
-  value: number;
 
   counter: Counter = new Counter();
 
   constructor(public counterService : CounterService,private route: ActivatedRoute) { }
 
   ngOnInit() {
-    this.counterService.getCounterValue(this.id).subscribe(counter => {
-      this.name = counter.name;
-      this.value = counter.value;
-    });
+    this.route.params.subscribe(
+      () => {
+        this.getCounter();
+      }
+    )
   }
 
 
