@@ -26,7 +26,7 @@ export class CounterService {
     return this.http.get<Counter>("https://lp4asgadot.herokuapp.com/counters/"+id+".json");
   }
 
-  getCounterValue(id: number): Observable<Counter> {
+  getCounter(id: number): Observable<Counter> {
     return this.http.get<Counter>("https://lp4asgadot.herokuapp.com/counters/"+id+".json");
   }
 
