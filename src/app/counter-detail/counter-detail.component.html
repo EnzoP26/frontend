@@ -1,1 +1,31 @@
-<p>counter-detail works!</p>
+<div>
+    <mat-card class="counter-detail-card" *ngIf="counter">
+        <mat-card-title >
+            <h3>Counter #{{ counter.id }} informations</h3>
+        </mat-card-title>
+        <mat-card-content>
+                <div >
+                    <p>Id</p>
+                    <p>{{ counter.id }}</p>
+                </div>
+                <div>
+                    <p>Name</p>
+                    <p>{{ counter.name }}</p>
+                </div>
+                <div>
+                    <p>Value</p>
+                    <p>{{ counter.value }}</p>
+                </div>
+                <div>
+                    <p>Created on</p>
+                    <p>{{ counter.create | date: 'dd/MM/yyyy' }}</p>
+                </div>
+                <div>
+                    <p>Updated on</p>
+                    <p>{{ counter.update | date: 'dd/MM/yyyy' }}</p>
+                </div>
+                
+        </mat-card-content>
+
+    </mat-card>
+</div>
