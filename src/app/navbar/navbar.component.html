@@ -8,7 +8,7 @@
       
       <button (click)="auth.login()" *ngIf="!auth.loggedIn">Log In</button>
       <button (click)="auth.logout()" *ngIf="auth.loggedIn">Log Out</button>
-      <a mat-list-item routerLink="">Home</a>;
+      <a mat-list-item routerLink="">Home</a>
       <a routerLink="profile" *ngIf="auth.loggedIn">Profile</a>
       <a mat-list-item [matMenuTriggerFor]="menu">
         Compteurs
