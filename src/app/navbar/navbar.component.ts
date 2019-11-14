@@ -11,7 +11,7 @@ import { Counter } from '../counter';
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.css']
 })
-export class NavbarComponent implements OnInit{
+export class NavbarComponent implements OnInit {
   counters : Array<Counter> = [];
 
   isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
@@ -20,7 +20,7 @@ export class NavbarComponent implements OnInit{
       shareReplay()
     );
 
-  constructor(private breakpointObserver: BreakpointObserver, public auth: AuthService) {}
+  constructor(private breakpointObserver: BreakpointObserver, public auth: AuthService,private counterService: CounterService) {}
   
   ngOnInit() {
     this.counterService.getCounters().subscribe((_counters) => {

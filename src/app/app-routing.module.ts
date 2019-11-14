@@ -4,7 +4,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { HomeComponent } from './home/home.component';
 import { AuthGuard } from './auth.guard';
 import { CounterComponent } from './counter/counter.component';
-import { CounterDetailComponent }  from './counter-detail/counter-detail.component';
+//import { CounterDetailComponent }  from './counter-detail/counter-detail.component';
 const routes: Routes = [
 
   {
