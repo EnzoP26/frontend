@@ -1,9 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Counter } from '../counter';
 import { ActivatedRoute } from '@angular/router';
 import { CounterService } from '../counter.service';
 import {Location} from '@angular/common';
-
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-counter-detail',
@@ -12,7 +12,8 @@ import {Location} from '@angular/common';
 })
 export class CounterDetailComponent implements OnInit {
 
-  counter: Counter;
+  @Input() position:number;
+  counter: Counter = new Counter();
   constructor(
     private route : ActivatedRoute,
     private counterService: CounterService,
@@ -23,14 +24,11 @@ export class CounterDetailComponent implements OnInit {
     this.getCounter();
   }
 
-  getCounter() : void{
-    this.route.params.subscribe(
-      params => {
-        this.counterService.getCounterValue(params['id'])
-          .subscribe(counter => this.counter = counter);
-      }
-    );
-  } 
+  getCounter() {
+    this.counterService.getCounter(this.position).subscribe(counter => {
+        this.counter = counter;
+      });
+  }
   increment() {
     this.counterService.increment(this.counter.id)
       .subscribe(counter => {
