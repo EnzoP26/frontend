@@ -22,7 +22,8 @@ export class CounterService {
 
 
   increment(id : number): Observable<Counter>{
-    return this.http.patch<Counter>("https://lp4asgadot.herokuapp.com/counters/"+id+".json", {});
+    this.httpClient.patch("https://lp4asgadot.herokuapp.com/counters/"+id+".json",{"value" : 1}).subscribe();
+    return this.httpClient.get<Counter>("https://lp4asgadot.herokuapp.com/counters/"+id+".json");
   }
 
   getCounterValue(id: number): Observable<Counter> {
@@ -31,17 +32,5 @@ export class CounterService {
 
   getCounters(): Observable<Counter[]> {
     return this.http.get<Counter[]>("https://lp4asgadot.herokuapp.com/counters.json");
-  }
-
-  getCountersArray() : Array<Counter> {
-    var counters : Array<Counter> = [];
-    this.getCounters().subscribe((remoteCounters) => {
-        remoteCounters.forEach((remoteCounter) => {
-          counters.push(remoteCounter);
-        });
-        counters.sort((first : Counter, second : Counter) => first.id - second.id);
-      }
-    );
-    return counters;
   }
 }
