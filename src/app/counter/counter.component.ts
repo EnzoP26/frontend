@@ -27,7 +27,7 @@ export class CounterComponent implements OnInit {
 
   getCounter() {
     this.counter.id = +this.route.snapshot.paramMap.get('id'); 
-    this.counterService.getCounterValue(this.counter.id)
+    this.counterService.getCounter(this.counter.id)
       .subscribe(counter => {
         this.counter = counter;
       });
