@@ -33,4 +33,15 @@ export class CounterService {
     return this.http.get<Counter[]>("https://lp4asgadot.herokuapp.com/counters.json");
   }
 
+  getCountersArray() : Array<Counter> {
+    var counters : Array<Counter> = [];
+    this.getCounters().subscribe((remoteCounters) => {
+        remoteCounters.forEach((remoteCounter) => {
+          counters.push(remoteCounter);
+        });
+        counters.sort((first : Counter, second : Counter) => first.id - second.id);
+      }
+    );
+    return counters;
+  }
 }

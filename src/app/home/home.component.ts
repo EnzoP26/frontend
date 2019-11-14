@@ -12,13 +12,7 @@ export class HomeComponent implements OnInit {
   constructor( private counterService: CounterService ) { }
 
   ngOnInit() {
-    this.counterService.getCounters()
-    .subscribe((_counters) => {
-      _counters.forEach((_counter) => {
-        this.counters.push(_counter);
-      });
-    });
-    console.log(this.counters);
+    this.counters = this.counterService.getCountersArray();
   }
 
   reset() {

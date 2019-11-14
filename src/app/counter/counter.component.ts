@@ -10,18 +10,22 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./counter.component.css']
 })
 export class CounterComponent implements OnInit {
+  
+  @Input() id : number;
+  name: string;
+  value: number;
 
   counter: Counter = new Counter();
 
   constructor(public counterService : CounterService,private route: ActivatedRoute) { }
 
   ngOnInit() {
-    this.route.params.subscribe(
-      () => {
-        this.getCounter();
-      }
-    )
+    this.counterService.getCounterValue(this.id).subscribe(counter => {
+      this.name = counter.name;
+      this.value = counter.value;
+    });
   }
+
 
   getCounter() {
     this.counter.id = +this.route.snapshot.paramMap.get('id'); 
