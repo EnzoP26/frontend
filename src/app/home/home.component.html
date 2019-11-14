@@ -2,5 +2,5 @@
 
 <button (click)="reset()">reset all counters</button>
 <div class="spaced">
-  <app-counter *ngFor="let counter of counters" [id]="counter.id"></app-counter>
+  <app-counter *ngFor="let counter of counters" [position]="counter.id"></app-counter>
 </div>
