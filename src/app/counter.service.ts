@@ -22,8 +22,8 @@ export class CounterService {
 
 
   increment(id : number): Observable<Counter>{
-    this.httpClient.patch("https://lp4asgadot.herokuapp.com/counters/"+id+".json",{"value" : 1}).subscribe();
-    return this.httpClient.get<Counter>("https://lp4asgadot.herokuapp.com/counters/"+id+".json");
+    this.http.patch("https://lp4asgadot.herokuapp.com/counters/"+id+".json",{"value" : 1}).subscribe();
+    return this.http.get<Counter>("https://lp4asgadot.herokuapp.com/counters/"+id+".json");
   }
 
   getCounterValue(id: number): Observable<Counter> {
