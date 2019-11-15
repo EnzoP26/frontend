@@ -22,6 +22,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ProfileComponent } from './profile/profile.component';
 import { CounterDetailComponent } from './counter-detail/counter-detail.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,

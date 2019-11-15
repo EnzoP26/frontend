@@ -2,15 +2,15 @@ code {
     z-index: 1;
     text-align : right;
     color : red;
-    animation-name: swapColor; 
+    /*animation-name: swapColor; 
     animation-duration: 7s; 
     animation-iteration-count: infinite;
-    animation-direction: reverse;
+    animation-direction: reverse;*/
   }
-
+/*
   @keyframes swapColor {
     0%   {color: red; background-color: green;}
     25%  {color: yellow; background-color: blue;}
     50%  {color: blue; background-color: yellow;}
     100% {color: green; background-color: red;}
-  }
+  }*/

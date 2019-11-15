@@ -5,6 +5,9 @@ import { Counter } from '../counter';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
 
+
+
+
 @Component({
   selector: 'app-counter',
   templateUrl: './counter.component.html',
@@ -39,4 +42,5 @@ export class CounterComponent implements OnInit {
         this.counter.value = counter.value;
       });
   }
+
 }
