@@ -2,7 +2,7 @@ export class Counter {
     id: number
     name: string
     value: number
-    create: string
-    update: string
+    date_create: string
+    date_update: string
     url : string
 }
