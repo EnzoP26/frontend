@@ -1,4 +1,4 @@
-import querystring from "querystring";
+/*import querystring from "querystring";
 import fetch from "node-fetch";
 
 exports.handler = async (event, context) => {
@@ -29,3 +29,4 @@ exports.handler = async (event, context) => {
       body: `Oops! Something went wrong. ${error}`
     }));
 };
+*/
